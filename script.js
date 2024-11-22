@@ -15,7 +15,7 @@ if (username != null) {
 }
 
 async function getMessages() {
-    const url = 'https://svenwlive.github.io/chat-app/api/chat/store.json';
+    const url = 'https://svenwlive.github.io/api-chat/db.json';
     const response = await fetch(url);
     const json = await response.json();
     const element = document.querySelector('.messages');
@@ -38,7 +38,7 @@ textbox.addEventListener("keydown", function (event) {
   // console.log(`User input: ${event.target.value}`);
   if (event.key === "Enter") {
     // console.info("sending message")
-    fetch('https://svenwlive.github.io/chat-app/api/chat/store.json', {
+    fetch('https://svenwlive.github.io/api-chat/db.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
