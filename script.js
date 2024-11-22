@@ -15,7 +15,7 @@ if (username != null) {
 }
 
 async function getMessages() {
-    const url = 'https://kool.krister.ee/chat/TA24A';
+    const url = 'https://svenwlive.github.io/chat-app/api/chat/store.json';
     const response = await fetch(url);
     const json = await response.json();
     const element = document.querySelector('.messages');
@@ -38,7 +38,7 @@ textbox.addEventListener("keydown", function (event) {
   // console.log(`User input: ${event.target.value}`);
   if (event.key === "Enter") {
     // console.info("sending message")
-    fetch('https://kool.krister.ee/chat/TA24A', {
+    fetch('https://svenwlive.github.io/chat-app/api/chat/store.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,15 +48,3 @@ textbox.addEventListener("keydown", function (event) {
   messagebox.value = ""
   }
 });
-
-// const msgbtn = document.getElementById("sendmsg")
-// msgbtn.click = function() {
-//   fetch('https://kool.krister.ee/chat/TA24A', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({"message":textbox.target.value, "name":username}),
-//   })
-//  messagebox.value = ""
-// };
